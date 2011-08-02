@@ -1,0 +1,36 @@
+<table>
+<tr>
+
+</tr>
+<%= form_for([@employee, @employee.registers.build]) do |f| %>
+
+<tr>
+    
+   <td><%= @employee.name %></td>
+
+
+    
+   <td><%= @employee.department %></td>
+
+    
+   <td><%= f.text_field :date %></td>
+
+
+   
+ <td> <%=  f.check_box(:present,{:multipart => true }, "present",nil)%> </td>
+ 
+
+   
+  <td><%= f.check_box(:late,{:multipart => true }, "late",nil) %> </td>
+
+
+
+    <td><%= f.check_box(:absent,{:multipart => true }, "absent",nil) %> </td>
+ </tr>
+
+<tr>
+    <td><div class="actions"></td>
+    <td><%= f.submit %></td>
+  </tr>
+</table>
+<% end %>

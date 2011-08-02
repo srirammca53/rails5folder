@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UserArticleComments</title>
+  <%= javascript_include_tiny_mce_if_used %>
+<%= tiny_mce if using_tiny_mce? %>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+ 
+</head>
+<body background="/images/blac2.png">
+<center><h1><font color="green">ARTICLES</font></h1></center>
+<table width="1000" height="15">
+<tr>
+<td bgcolor="gray" width="250" align=center><b><%= link_to "HOME"  %></b></td>
+<td bgcolor="gray" width="250" align=center><b><%= link_to "CONTACT US"  %></b></td>
+<td bgcolor="gray" width="250" align=center><b><%= link_to "ORDER NOW"  %></b></td>
+<td bgcolor="gray" width="250" align=center><b><%= link_to "PUBLISHERS"  %></b></td>
+</tr>
+</table>
+<hr>
+
+<%= yield %>
+<hr>
+<center><h5><font color="aqua">copyright :@articles 2011</font></h5></center>
+</body>
+</html>

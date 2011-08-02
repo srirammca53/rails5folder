@@ -1,0 +1,24 @@
+<center>
+<h1><font color="white">Listing articles</font></h1>
+
+
+ 
+<% @user.articles.each do |article| %>
+<center>
+  <table border=1>
+  <tr bgcolor=		#A0C544>
+  <td width="500" height="50"><%= link_to "#{article.title}",article %> |<i>by</i>:<%=@user.username %>| <i>on:</i> <%= article.created_at.strftime("%Y-%m-%d") %></td>
+  </tr>
+  <tr bgcolor=	#A0C544>
+  <td width="500" height="70"><%= truncate("#{article.description}", :length=> 30) %> </td>
+  </tr>
+  </table>
+  </center>
+  <br/>
+  
+ <%#= link_to "more details..." , article %>
+  <% end %>
+<br />
+<center>
+<font color="yellow"><%= link_to 'New Article', new_user_article_path(:user_id => 2) %></font>
+

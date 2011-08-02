@@ -1,0 +1,43 @@
+<%= link_to 'Back', user_articles_path(:user_id=>2) %>
+<center>
+<marquee bgcolor="black" behaviour="alternate">
+<font color="yellow"> Please comment your opinion on this article......</font>
+</marquee>
+<h1><font color="white"><%= @article.title %></font></h1><font color="white"><i>by :</i><%= @user.username %></font>
+<font color="white"><%= @article.title %></font></h1><font color="white"><i>by :</i><%= @user.username %></font>
+
+<table border = 0>
+<tr bgcolor=	#A0C544>
+  <td width="500" height="250"><%= sanitize(@article.description) %></font> </td>
+ 
+</tr>
+</table>
+<h2><font color="white"><blink>Comments</blink></font></h2>
+<% @article.comments.each do |comment| %>
+  <p>
+    <font color="orange"><%= comment.commenter %>:</font>
+    <font color="white"><%= comment.comment %></font>
+    <font color="white"><i>on:</i><%= comment.created_at.strftime("%Y-%m-%d") %></font>
+     
+  </p>
+<% end %>
+<h2><font color="green">Add a comment:</font></h2>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+<center>
+  <table border=0 >
+  <tr bg color =#A0C500>
+    <td> <font color="white"><%= f.label :commenter %></font></td>
+    <td><%= f.text_field :commenter %></td>
+  </tr>
+  <tr bg color =#A0C500>
+    <td> <font color="white"><%= f.label :comment %></font></td>
+    <td><%= f.text_area :comment %></td>
+  </tr>
+  <table>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </center>
+<% end %>
+
+

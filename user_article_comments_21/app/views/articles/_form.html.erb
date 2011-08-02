@@ -1,0 +1,14 @@
+<%= form_for([@user, @user.articles.build],:html => { :multipart => true }) do |f| %>
+  <div class="field">
+    <font color="white"><%= f.label :title %></font><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <font color="white"><%= f.label :description %></font><br />
+    <%= f.text_area :description, :class => "mceEditor" %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

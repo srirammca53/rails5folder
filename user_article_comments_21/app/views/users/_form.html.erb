@@ -1,0 +1,21 @@
+<%= form_for(@user) do |f| %>
+  
+ <table border=1>
+ <tr bgcolor="black">
+    <td><font color="white"><%= f.label :username %></font></td>
+    <td><font color="white"><%= f.text_field :username %></font></td>
+  </tr>
+  <tr bgcolor="black">
+     <td><font color="white"><%= f.label :email %></font></td>
+     <td><font color="white"><%= f.text_field :email %></font></td>
+  </tr>
+  <tr bgcolor="black
+  ">
+     <td><font color="white"><%= f.label :address %></font></td>
+     <td><font color="white"><%= f.text_area :address %></font></td>
+  </tr>
+  </table>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
